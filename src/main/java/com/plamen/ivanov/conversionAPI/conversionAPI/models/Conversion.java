@@ -1,14 +1,29 @@
 package com.plamen.ivanov.conversionAPI.conversionAPI.models;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Entity
+@Table(name = "conversions")
 public class Conversion {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "conversion_id")
     private int conversionId;
+
+    @Column(name = "source_currency")
     private String sourceCurrency;
+
+    @Column(name = "target_currency")
     private String targetCurrency;
+
+    @Column(name = "amount")
     private double amount;
+
+    @Column(name = "timestamp")
     private LocalDateTime timestamp;
 
 

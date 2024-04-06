@@ -16,6 +16,6 @@ public class ConversionServiceImpl implements ConversionService {
 
     @Override
     public Conversion createConversion(Conversion conversion) {
-        return conversionRepository.createConversion(conversion);
+        return conversionRepository.saveAndFlush(conversion);
     }
 }
