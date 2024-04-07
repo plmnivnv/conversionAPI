@@ -1,4 +1,4 @@
-package com.plamen.ivanov.conversionAPI.conversionAPI.repositories.contracts;
+package com.plamen.ivanov.conversionAPI.conversionAPI.repositories;
 
 import com.plamen.ivanov.conversionAPI.conversionAPI.models.Conversion;
 import org.springframework.data.jpa.repository.JpaRepository;

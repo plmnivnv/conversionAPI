@@ -1,7 +1,7 @@
 package com.plamen.ivanov.conversionAPI.conversionAPI.services;
 
 import com.plamen.ivanov.conversionAPI.conversionAPI.models.Conversion;
-import com.plamen.ivanov.conversionAPI.conversionAPI.repositories.contracts.ConversionRepository;
+import com.plamen.ivanov.conversionAPI.conversionAPI.repositories.ConversionRepository;
 import com.plamen.ivanov.conversionAPI.conversionAPI.services.contracts.ConversionService;
 import org.springframework.stereotype.Service;
 
