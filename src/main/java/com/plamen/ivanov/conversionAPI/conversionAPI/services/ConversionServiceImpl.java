@@ -5,6 +5,8 @@ import com.plamen.ivanov.conversionAPI.conversionAPI.repositories.ConversionRepo
 import com.plamen.ivanov.conversionAPI.conversionAPI.services.contracts.ConversionService;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service
 public class ConversionServiceImpl implements ConversionService {
 
@@ -16,6 +18,9 @@ public class ConversionServiceImpl implements ConversionService {
 
     @Override
     public Conversion createConversion(Conversion conversion) {
+        conversion.setTimestamp(LocalDateTime.now());
         return conversionRepository.saveAndFlush(conversion);
     }
+
+
 }

@@ -23,6 +23,9 @@ public class Conversion {
     @Column(name = "amount")
     private double amount;
 
+    @Column(name = "result")
+    private double result;
+
     @Column(name = "timestamp")
     private LocalDateTime timestamp;
 
@@ -52,6 +55,14 @@ public class Conversion {
 
     public void setTargetCurrency(String targetCurrency) {
         this.targetCurrency = targetCurrency;
+    }
+
+    public double getResult() {
+        return result;
+    }
+
+    public void setResult(double result) {
+        this.result = result;
     }
 
     public double getAmount() {
