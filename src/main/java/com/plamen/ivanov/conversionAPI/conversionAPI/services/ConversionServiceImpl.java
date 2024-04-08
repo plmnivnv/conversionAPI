@@ -6,6 +6,8 @@ import com.plamen.ivanov.conversionAPI.conversionAPI.services.contracts.Conversi
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.List;
 
 @Service
 public class ConversionServiceImpl implements ConversionService {
@@ -20,6 +22,19 @@ public class ConversionServiceImpl implements ConversionService {
     public Conversion createConversion(Conversion conversion) {
         conversion.setTimestamp(LocalDateTime.now());
         return conversionRepository.saveAndFlush(conversion);
+    }
+
+    @Override
+    public List<Conversion> getAllConversions(LocalDateTime date, Integer conversionId) {
+        if (date != null && conversionId != null) {
+            return conversionRepository.findByDateAndConversionId(date, conversionId);
+        } else if (date != null) {
+            return conversionRepository.findByDate(date);
+        } else if (conversionId != null) {
+            return conversionRepository.findByConversionId(conversionId);
+        } else {
+            return conversionRepository.findAll();
+        }
     }
 
 

@@ -26,8 +26,8 @@ public class Conversion {
     @Column(name = "result")
     private double result;
 
-    @Column(name = "timestamp")
-    private LocalDateTime timestamp;
+    @Column(name = "date")
+    private LocalDateTime date;
 
 
     public Conversion() {
@@ -74,11 +74,11 @@ public class Conversion {
     }
 
     public LocalDateTime getTimestamp() {
-        return timestamp;
+        return date;
     }
 
     public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
+        this.date = timestamp;
     }
 
     @Override

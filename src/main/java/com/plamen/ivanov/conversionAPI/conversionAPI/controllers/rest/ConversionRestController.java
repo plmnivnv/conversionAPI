@@ -1,4 +1,4 @@
-package com.plamen.ivanov.conversionAPI.conversionAPI.controllers;
+package com.plamen.ivanov.conversionAPI.conversionAPI.controllers.rest;
 
 
 import com.plamen.ivanov.conversionAPI.conversionAPI.controllers.helpers.contracts.ModelsMapper;
@@ -12,8 +12,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.List;
+
 @RestController
-@RequestMapping("/api/v1/conversions")
+@RequestMapping("/api/v1")
 public class ConversionRestController {
 
     private final ExternalApiService externalApiService;
@@ -45,6 +49,12 @@ public class ConversionRestController {
         Conversion conversion = modelsMapper.conversionFromDto(conversionDto);
         Conversion newConversion = conversionService.createConversion(conversion);
         return modelsMapper.conversionResponseDtoFromConversion(newConversion);
+    }
+
+    @GetMapping("/conversions")
+    public List<Conversion> getAllConversions(@RequestParam(required = false)LocalDateTime timestamp,
+                                              @RequestParam(required = false)Integer conversionId){
+        return conversionService.getAllConversions(timestamp, conversionId);
     }
 
 
