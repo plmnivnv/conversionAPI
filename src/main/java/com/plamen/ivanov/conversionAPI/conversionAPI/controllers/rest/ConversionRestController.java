@@ -3,7 +3,7 @@ package com.plamen.ivanov.conversionAPI.conversionAPI.controllers.rest;
 
 import com.plamen.ivanov.conversionAPI.conversionAPI.controllers.helpers.contracts.ModelsMapper;
 import com.plamen.ivanov.conversionAPI.conversionAPI.models.Conversion;
-import com.plamen.ivanov.conversionAPI.conversionAPI.models.dtos.ConversionDto;
+import com.plamen.ivanov.conversionAPI.conversionAPI.models.dtos.ConversionRequestDto;
 import com.plamen.ivanov.conversionAPI.conversionAPI.models.dtos.ConversionResponseDto;
 import com.plamen.ivanov.conversionAPI.conversionAPI.services.contracts.ConversionService;
 import com.plamen.ivanov.conversionAPI.conversionAPI.services.contracts.ExternalApiService;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -45,7 +44,7 @@ public class ConversionRestController {
     }
 
     @PostMapping
-    public ConversionResponseDto getConversion(@Valid @RequestBody ConversionDto conversionDto){
+    public ConversionResponseDto getConversion(@Valid @RequestBody ConversionRequestDto conversionDto){
         Conversion conversion = modelsMapper.conversionFromDto(conversionDto);
         Conversion newConversion = conversionService.createConversion(conversion);
         return modelsMapper.conversionResponseDtoFromConversion(newConversion);

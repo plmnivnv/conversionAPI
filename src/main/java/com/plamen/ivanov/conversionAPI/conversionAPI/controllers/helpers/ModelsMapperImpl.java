@@ -2,7 +2,7 @@ package com.plamen.ivanov.conversionAPI.conversionAPI.controllers.helpers;
 
 import com.plamen.ivanov.conversionAPI.conversionAPI.controllers.helpers.contracts.ModelsMapper;
 import com.plamen.ivanov.conversionAPI.conversionAPI.models.Conversion;
-import com.plamen.ivanov.conversionAPI.conversionAPI.models.dtos.ConversionDto;
+import com.plamen.ivanov.conversionAPI.conversionAPI.models.dtos.ConversionRequestDto;
 import com.plamen.ivanov.conversionAPI.conversionAPI.models.dtos.ConversionResponseDto;
 import com.plamen.ivanov.conversionAPI.conversionAPI.services.contracts.ExternalApiService;
 import org.springframework.stereotype.Component;
@@ -18,7 +18,7 @@ public class ModelsMapperImpl implements ModelsMapper {
     }
 
     @Override
-    public Conversion conversionFromDto(ConversionDto conversionDto) {
+    public Conversion conversionFromDto(ConversionRequestDto conversionDto) {
         Conversion conversion = new Conversion();
         conversion.setSourceCurrency(conversionDto.getSourceCurrency());
         conversion.setTargetCurrency(conversionDto.getTargetCurrency());

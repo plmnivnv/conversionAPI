@@ -3,7 +3,7 @@ package com.plamen.ivanov.conversionAPI.conversionAPI.models.dtos;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
-public class ConversionDto {
+public class ConversionRequestDto {
 
     @NotNull
     private String sourceCurrency;
@@ -12,12 +12,12 @@ public class ConversionDto {
     @Positive
     private double amount;
 
-    public ConversionDto() {
+    public ConversionRequestDto() {
     }
 
-    public ConversionDto(String sourceCurrency,
-                         String targetCurrency,
-                         double amount) {
+    public ConversionRequestDto(String sourceCurrency,
+                                String targetCurrency,
+                                double amount) {
         this.sourceCurrency = sourceCurrency;
         this.targetCurrency = targetCurrency;
         this.amount = amount;
