@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.plamen.ivanov.conversionAPI.conversionAPI.services.ConversionServiceTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-04-09T09:41:23" hostname="DESKTOP-KUR9PC2" time="0.306">
+  <properties/>
+  <testcase name="getAllConversions_Should_CallRepository_When_NoArgumentsProvided()" classname="com.plamen.ivanov.conversionAPI.conversionAPI.services.ConversionServiceTests" time="0.295"/>
+  <testcase name="getAllConversions_Should_CallRepository_When_ArgumentsArePresent()" classname="com.plamen.ivanov.conversionAPI.conversionAPI.services.ConversionServiceTests" time="0.007"/>
+  <testcase name="createConversion_Should_CallRepository()" classname="com.plamen.ivanov.conversionAPI.conversionAPI.services.ConversionServiceTests" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
